@@ -5,7 +5,7 @@ import Tasks from "./components/Tasks";
 import { v4 } from "uuid";
 
 const WebContainer = styled.div`
-  height: 100%;
+  height: 100vh;
   background-color: black;
   display: flex;
   justify-content: center;
