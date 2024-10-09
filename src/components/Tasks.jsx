@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ChevronRightIcon, Trash2Icon } from "lucide-react";
+import { CheckIcon, ChevronRightIcon, Trash2Icon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
@@ -28,6 +28,9 @@ const ListItemBtn = styled.button`
   border: none;
   cursor: pointer;
   text-align: start;
+  display: flex;
+  align-items: center;
+  gap: 2px;
 
   text-decoration: ${(props) => (props.isCompleted ? "line-through" : "none")};
 
@@ -53,6 +56,7 @@ function Tasks({ tasks, onTaskClick, onDeleteTaskClick }) {
             isCompleted={task.isCompleted}
             onClick={() => onTaskClick(task.id)}
           >
+            {task.isCompleted && <CheckIcon />}
             {task.title}
           </ListItemBtn>
 
